@@ -1,0 +1,10 @@
+<input type="file" id="f">
+<audio controls id="a"></audio>
+<script>
+const [f,a]=[document.getElementById('f'),document.getElementById('a')];
+f.addEventListener('change',e=>{
+const r=new FileReader();
+r.onload=()=>{a.src=r.result;a.play()};
+r.readAsDataURL(e.target.files[0]);
+});
+</script>
